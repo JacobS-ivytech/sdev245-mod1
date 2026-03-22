@@ -4,12 +4,19 @@
 admin = True
 user = False
 
-#hard coded username and role
-username = {"bigBoss":admin}
+#hard users and roles
+users = {
+    "bigBoss":admin,
+    "floorWorker":user
+    }
 
+#login to get username. use hardcoded for exercise
+login = "bigBoss"
 
-for name, isAdmin in username.items():
-    print(f"Welcome back {name}")
+#check that login credential matches known user
+if login in users:
+    isAdmin = users[login]
+    print(f"Welcome back {login}")
 
     #check user role if it is admin
     if isAdmin:
